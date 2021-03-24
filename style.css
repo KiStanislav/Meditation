@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+.meditation-app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container__time, .container__sounds, .container__player {
+  height: 80%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container__player {
+  position: relative;
+}
+
+.track-outline, .moving-outline {
+  position: absolute;
+  height: 50%;
+  transform: rotate(-90deg);
+  /* top: 50%;
+  left: 50%; */
+  /* pointer-events: none; */
+}
+
+/* .container__time {
+  background: lightblue;
+}
+
+.container__sounds {
+  background: lightseagreen;
+}
+
+.container__player {
+  background: lightcoral;
+} */
+
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  font-size: 5rem;
+  color: white;
+}
+
+video {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  height: 100vh;
+  z-index: -1;
+}
+
+button {
+  color: white;
+  width: 30%;
+  height: 10%;
+  background: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: all 0.5s ease ;
+}
+
+.time-select:hover {
+  color: black;
+  background: white;
+}
+
+.container__sounds button {
+  border: none;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  /* height: 100%; */
+}
+
+.container__sounds button:nth-child(1) {
+  background: rgb(43, 121, 223);
+}
+
+.container__sounds button:nth-child(2) {
+  background: rgb(238, 118, 62);
+}
+
+.container__sounds button img {
+  height: 70%;
+}
+
+.play { 
+  z-index: 1;
+}
