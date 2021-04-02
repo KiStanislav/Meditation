@@ -28,22 +28,7 @@
   position: absolute;
   height: 50%;
   transform: rotate(-90deg);
-  /* top: 50%;
-  left: 50%; */
-  /* pointer-events: none; */
 }
-
-/* .container__time {
-  background: lightblue;
-}
-
-.container__sounds {
-  background: lightseagreen;
-}
-
-.container__player {
-  background: lightcoral;
-} */
 
 .time-display {
   position: absolute;
@@ -82,7 +67,6 @@ button {
   height: 120px;
   width: 120px;
   border-radius: 50%;
-  /* height: 100%; */
 }
 
 .container__sounds button:nth-child(1) {
