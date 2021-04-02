@@ -69,18 +69,55 @@ button {
   border-radius: 50%;
 }
 
-.container__sounds button:nth-child(1) {
-  background: rgb(43, 121, 223);
-}
-
-.container__sounds button:nth-child(2) {
-  background: rgb(238, 118, 62);
-}
-
 .container__sounds button img {
   height: 70%;
 }
 
 .play { 
   z-index: 1;
+}
+
+@media (max-width: 769px) {
+  .track-outline, .moving-outline {
+    height: 35%;
+  }
+  button {
+    width: 53%;
+    height: 8%;
+  }
+}
+
+@media (max-width: 411px) {
+  button {
+    margin: 10px;
+    width: 28%;
+    height: 18%;
+  }
+  .meditation-app {
+    display: flex;
+    flex-direction: column;
+  }
+  .container__time, .container__sounds {
+    flex-direction: row;
+  }
+  .container__player {
+    position: absolute;
+  }
+  .time-display {
+    bottom: 16%;
+  }
+  .container__sounds {
+    position: absolute;
+    top: 47%;
+  }
+  .container__time {
+    position: absolute;
+    top: -21%;
+  }
+}
+
+@media (max-width: 375px) {
+  .time-display {
+    font-size: 4rem;
+  }
 }

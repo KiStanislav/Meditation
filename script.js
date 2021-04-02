@@ -11,6 +11,7 @@ let fakeDuration = 600;
 outline.style.strokeDasharray = outlineLenght;
 outline.style.strokeDashoffset = outlineLenght;
 
+
 //play sound
 play.addEventListener('click', () => {
   checkPlaying(song);
@@ -30,6 +31,7 @@ sounds.forEach(sound => {
     checkPlaying(song);
   } )
 })
+
  
 const checkPlaying = song => {
   if(song.paused) {
