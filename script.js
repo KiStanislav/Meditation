@@ -6,33 +6,12 @@ const sounds = document.querySelectorAll('.container__sounds button');
 const timeDisplay = document.querySelector('.time-display');
 const timeSelect = document.querySelectorAll('.time-select');
 const outlineLenght = outline.getTotalLength();
-let fakeDuration = 600;
+const ZERO = '0';
+let fakeTime = 600;
 
 outline.style.strokeDasharray = outlineLenght;
 outline.style.strokeDashoffset = outlineLenght;
 
-
-//play sound
-play.addEventListener('click', () => {
-  checkPlaying(song);
-});
-
-timeSelect.forEach(option => {
-  option.addEventListener('click', function(){
-    fakeDuration = this.getAttribute('data-time');
-    timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`
-  });
-});
-
-sounds.forEach(sound => {
-  sound.addEventListener('click', function() {
-    song.src = this.getAttribute('data-sound');
-    video.src = this.getAttribute('data-video');
-    checkPlaying(song);
-  } )
-})
-
- 
 const checkPlaying = song => {
   if(song.paused) {
     song.play();
@@ -45,15 +24,36 @@ const checkPlaying = song => {
   }
 };
 
+play.addEventListener('click', () => checkPlaying(song));
+
+function addZero(n) {
+  return (parseInt(n, 10) < 10 ? ZERO : '') + n;
+}
+
+timeSelect.forEach(option => {
+  option.addEventListener('click', function(){
+    fakeTime = this.getAttribute('data-time');
+    timeDisplay.textContent = `${addZero(Math.floor(fakeTime / 60))}:${addZero(Math.floor(fakeTime % 60))}`
+  });
+});
+
+sounds.forEach(sound => {
+  sound.addEventListener('click', function() {
+    song.src = this.getAttribute('data-sound');
+    video.src = this.getAttribute('data-video');
+    checkPlaying(song);
+  } )
+})
+
 song.ontimeupdate = () => {
   let currentTime = song.currentTime;
-  let elapsed = fakeDuration - currentTime;
-  let seconds = Math.floor(elapsed % 60);
-  let minutes = Math.floor(elapsed / 60);
-  let progress = outlineLenght - (currentTime / fakeDuration) * outlineLenght;
+  let elapsed = fakeTime - currentTime;
+  let seconds = addZero(Math.floor(elapsed % 60));
+  let minutes = addZero(Math.floor(elapsed / 60));
+  let progress = outlineLenght - (currentTime / fakeTime) * outlineLenght;
   outline.style.strokeDashoffset = progress;
   timeDisplay.textContent = `${minutes}:${seconds}`;
-  if(currentTime >= fakeDuration) {
+  if(currentTime >= fakeTime) {
     song.pause();
     song.currentTime = 0;
     play.src = "./svg/play.svg";
