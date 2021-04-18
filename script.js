@@ -34,15 +34,15 @@ function addZero(n) {
 
 timeSelect.forEach(option => {
   option.addEventListener('click', function(){
-    fakeTime = this.dataset.dataTime;
+    fakeTime = this.dataset.time;
     timeDisplay.textContent = `${addZero(Math.floor(fakeTime / SECONDS_PER_MINUTE))}:${addZero(Math.floor(fakeTime % SECONDS_PER_MINUTE))}`
   });
 });
 
 sounds.forEach(sound => {
   sound.addEventListener('click', function() {
-    song.src = this.dataset.dataSound;
-    video.src = this.dataset.dataVideo;
+    song.src = this.dataset.sound;
+    video.src = this.dataset.video;
     checkPlaying(song);
   } )
 })
