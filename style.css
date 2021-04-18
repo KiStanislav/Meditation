@@ -34,23 +34,24 @@
   position: absolute;
   bottom: 10%;
   font-size: 5rem;
-  color: #ffffff;
+  color: #fff;
 }
 
 video {
   position: fixed;
-  top: 0%;
-  left: 0%;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
   z-index: -1;
 }
 
 button {
-  color: #ffffff;
-  width: 30%;
+  color: #fff;
+  width: auto;
   height: 10%;
   background: none;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.3rem;
@@ -58,8 +59,8 @@ button {
 }
 
 .time-select:hover {
-  color: black;
-  background: #ffffff;
+  color: #000;
+  background: #fff;
 }
 
 .container__sounds button {
@@ -82,12 +83,12 @@ button {
     height: 35%;
   }
   button {
-    width: 53%;
+    width: auto;
     height: 8%;
   }
 }
 
-@media (max-width: 411px) {
+@media (max-width: 414px) {
   button {
     margin: 10px;
     width: 28%;
@@ -96,6 +97,10 @@ button {
   .meditation-app {
     display: flex;
     flex-direction: column;
+  }
+
+  video {
+    height: 100vh;
   }
   .container__time, .container__sounds {
     flex-direction: row;
