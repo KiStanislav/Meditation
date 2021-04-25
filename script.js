@@ -7,7 +7,7 @@ const timeDisplay = document.querySelector('.time-display');
 const timeSelect = document.querySelectorAll('.time-select');
 const outlineLength = outline.getTotalLength();
 const ZERO = '0';
-const TEN = 10;
+const TWO_DIGITS = 10;
 const SECONDS_PER_MINUTE = 60;
 let fakeTime = 600;
 
@@ -29,7 +29,7 @@ const checkPlaying = song => {
 play.addEventListener('click', () => checkPlaying(song));
 
 function addZero(n) {
-  return (parseInt(n, 10) < TEN ? ZERO : '') + n;
+  return (parseInt(n, 10) < TWO_DIGITS ? ZERO : '') + n;
 }
 
 timeSelect.forEach(option => {

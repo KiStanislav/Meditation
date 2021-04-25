@@ -47,10 +47,12 @@ video {
 }
 
 button {
+  /* display: inline-block; */
   color: #fff;
-  width: auto;
-  height: 10%;
+  /* width: auto; */
+  /* height: auto; */
   background: none;
+  padding: 10px;
   border: 2px solid #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -78,7 +80,7 @@ button {
   z-index: 1;
 }
 
-@media (max-width: 769px) {
+/* @media (max-width: 769px) {
   .track-outline, .moving-outline {
     height: 35%;
   }
@@ -102,6 +104,7 @@ button {
   video {
     height: 100vh;
   }
+  
   .container__time, .container__sounds {
     flex-direction: row;
   }
@@ -125,4 +128,4 @@ button {
   .time-display {
     font-size: 4rem;
   }
-}
+} */
