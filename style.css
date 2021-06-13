@@ -49,8 +49,6 @@ video {
 button {
   margin: 10px;
   color: #fff;
-  /* width: auto; */
-  /* height: auto; */
   background: none;
   padding: 10px;
   border: 2px solid #fff;
@@ -83,7 +81,7 @@ button {
   cursor: pointer;
 }
 
-h3 {
+h2 {
   display: flex;
   height: 1vh;
 }
