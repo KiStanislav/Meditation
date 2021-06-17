@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+.meditation-app {
+  height: 90vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container__time, .container__sounds, .container__player {
+  height: 80%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container__player {
+  position: relative;
+}
+
+.track-outline, .moving-outline {
+  position: absolute;
+  height: 50vh;
+  transform: rotate(-90deg);
+}
+
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  font-size: 3rem;
+  color: #fff;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+button {
+  margin: 10px;
+  color: #fff;
+  background: none;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: all 0.5s ease ;
+}
+
+.time-select:hover {
+  color: #000;
+  background: #fff;
+}
+
+.container__sounds button {
+  border: none;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+.container__sounds button img {
+  height: 70%;
+}
+
+.play { 
+  z-index: 1;
+  height: 20%;
+  width: 20%;
+  cursor: pointer;
+}
+
+h1 {
+  display: flex;
+  height: 1vh;
+}
+ 
